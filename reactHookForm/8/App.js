@@ -13,9 +13,11 @@ function App() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+
       <label>Name:</label>
       <input {...register("name", { required: "Name is required" })} />
       {errors.name && <p>{errors.name.message}</p>} {/* Display error */}
+
       <label>Email:</label>
       <input
         {...register("email", {
@@ -27,19 +29,22 @@ function App() {
         })}
       />
       {errors.email && <p>{errors.email.message}</p>} {/* Display error */}
+
       <button type="submit">Submit</button>
+
     </form>
   );
 }
 
 export default App;
 
+
+
+
 // Lesson 8: Handling Errors and Custom Error Messages.
 
 // Understanding Error Handling in React Hook Form
 // React Hook Form allows you to easily handle form errors. When a validation fails, React Hook Form populates the errors object, which you can use to display custom error messages next to the invalid field.
-
-
 
 
 // Explanation:
@@ -48,11 +53,8 @@ export default App;
 
 
 
-
-
 // Handling Multiple Validation Rules:
 // You can combine multiple validation rules for a field, and React Hook Form will display the first error that occurs.
-
 
 // <input
 //   {...register("username", {
@@ -67,33 +69,28 @@ export default App;
 
 
 
-
 // Custom Error Messages Based on Condition:
 // You can also define custom error messages based on complex validation conditions. For example, checking if a password contains at least one special character.
 
-{/* <input
+{
+  /* <input
   {...register("password", {
     required: "Password is required",
     validate: (value) => 
       /[A-Z]/.test(value) || "Password must contain at least one uppercase letter"
   })}
 />
-{errors.password && <p>{errors.password.message}</p>} */}
-
-
-
-
+{errors.password && <p>{errors.password.message}</p>} */
+}
 
 
 // Form Level Error Handling:
 // You can also handle errors globally, for example, when a form submission fails, such as an API call error.
 
-
-
-// import React, { useState } from "react";
+// import { useState } from "react";
 // import { useForm } from "react-hook-form";
 
-// const APIErrorHandlingForm = () => {
+// function App() {
 //   const { register, handleSubmit, formState: { errors } } = useForm();
 //   const [apiError, setApiError] = useState("");
 
@@ -127,14 +124,8 @@ export default App;
 //   );
 // };
 
-// export default APIErrorHandlingForm;
-
-
+// export default App;
 
 // Explanation:
 // API Error: If your API call fails, you can set an error message and display it at the bottom of the form.
 // Global Errors: The apiError state holds the error message, which can be shown outside the individual input fields.
-
-
-
-

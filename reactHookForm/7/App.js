@@ -55,6 +55,25 @@ export default App;
 // Advanced: Handling Submission Success and Error
 // You might want to show feedback (e.g., success or error messages) after submitting the form. This can be done by managing form states such as isSubmitting or isSubmitSuccessful.
 
+// React Hook Form automatically provides isSubmitting and isSubmitSuccessful as part of its formState.
+
+// How They Work:
+
+
+// isSubmitting
+// Becomes true when the form is being submitted.
+// Becomes false once submission is complete.
+// Useful for disabling the submit button during form submission.
+
+
+// isSubmitSuccessful
+// Becomes true if submission is successful (no validation errors).
+// Resets to false when the form state resets.
+// Useful for showing success messages.
+
+
+
+
 // Form with Submission States Example:
 
 // import { useState } from "react";
